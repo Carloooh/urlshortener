@@ -92,7 +92,7 @@ async function shortenURL() {
 
     const longURL = longURLInput.value;
     const alias = aliasInput.value;
-    const apiUrl = "http://lilurl.vercel.app/url";
+    const apiUrl = "https://lilurl.vercel.app/url";
 
     const requestBody = {
         "url": longURL,
