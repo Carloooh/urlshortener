@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="URL Shortener">
+	<main class="flex flex-col items-center justify-center min-h-screen bg-gray-800 py-2 text-white">
+		<div class="max-w-md w-full space-y-8">
+			<div class="mt-6 flex items-center justify-center">
+				<img src="/logo.svg" alt="Logo" class="h-12 w-12 mr-2" />
+				<h2 class="text-3xl font-extrabold text-white">URL Shortener</h2>
+			</div>
+			
+			<form class="mt-8 space-y-6">
+				<input type="hidden" name="remember" value="true" />
+				<div class="rounded-md shadow-sm -space-y-px">
+					<div>
+						<label for="url" class="sr-only">URL</label>
+						<input id="url" name="url" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="URL" />
+					</div>
+					<div>
+						<label for="alias" class="sr-only">Alias</label>
+						<input id="alias" name="alias" type="text" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Alias (optional)" />
+					</div>
+				</div>
+
+				<div>
+					<button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+						<img src="/cut.svg" alt="Cut" class="h-5 w-5 mr-2" /> Shorten URL
+					</button>
+				</div>
+			</form>
+			<div class="mt-2">
+				<label for="short-url" class="block text-sm font-medium text-gray-200">Your Short URL</label>
+				<div class="mt-1 flex rounded-md shadow-sm">
+					<div class="relative flex items-stretch flex-grow focus-within:z-10">
+						<input type="text" id="short-url" name="short-url" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md sm:text-sm border-gray-300" readonly />
+					</div>
+					<button id="copy-button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+						<img src="/copy.svg" alt="Copy" class="h-5 w-5 mr-2" /> Copy
+					</button>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
